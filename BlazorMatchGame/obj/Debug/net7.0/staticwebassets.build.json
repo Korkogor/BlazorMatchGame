@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XdsHFqKCj6iJ5ElI+hZxI2IzpY3absK3d/icY4BVY4E=",
+  "Hash": "Do7jJ9Sin1BhJ/pVVaBD/zTIjrf4TX3hsnp9dtifyqs=",
   "Source": "BlazorMatchGame",
   "BasePath": "/",
   "Mode": "Root",
@@ -7155,23 +7155,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/index.html"
-    },
-    {
-      "Identity": "/Users/korkogor/Projects/BlazorMatchGame/BlazorMatchGame/wwwroot/sample-data/weather.json",
-      "SourceId": "BlazorMatchGame",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/korkogor/Projects/BlazorMatchGame/BlazorMatchGame/wwwroot/",
-      "BasePath": "/",
-      "RelativePath": "sample-data/weather.json",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/sample-data/weather.json"
     }
   ]
 }
