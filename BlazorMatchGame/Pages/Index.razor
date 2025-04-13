@@ -14,10 +14,12 @@
 
 <div class="container">
     <div class="row">
-        @foreach (var animal in shuffledAnimals)
-        {
+        @for (var animalNubmer = 0; animalNubmer < shuffledAnimals.Count; animalNubmer++)
+            {
+                var animal = shuffledAnimals[animalNubmer];
+                var uniqueDescrtiption = $"Button #{animalNubmer}";
             <div class="col-3">
-                <button type="button" class="btn btn-outline-dark">
+                <button @onclick="@(() => ButtonClick(animal, uniqueDescrtiption))" type="button" class="btn btn-outline-dark">
                     <h1>@animal</h1>
                 </button>
             </div>
@@ -52,5 +54,32 @@
         shuffledAnimals = animalEmoji
             .OrderBy(item => random.Next())
             .ToList();
+    }
+
+    string lastAnimalFound = string.Empty;
+    string lastDescription = string.Empty;
+    private void ButtonClick(string animal, string animalDescription)
+    {
+        if (lastAnimalFound == string.Empty)
+        {
+            //Выбор первого элемента пары. Запомнить его
+            lastAnimalFound = animal;
+            lastDescription = animalDescription;
+        }
+        else if ((lastAnimalFound == animal) && (animalDescription != lastDescription)) {
+            //Совпадение обнаружено! Выполнить сброс для следующей пары.
+            lastAnimalFound = string.Empty;
+
+            //Найденные животные заменяются пустыми строками, чтобы скрыть эмодзи на экране
+            shuffledAnimals = shuffledAnimals
+                .Select(a => a.Replace(animal, string.Empty))
+                .ToList();
+        }
+        else
+        {
+            //Пользователь выбрал непарных животных
+            //Сбросить сохранённый выбор
+            lastAnimalFound = string.Empty;
+        }
     }
 }
